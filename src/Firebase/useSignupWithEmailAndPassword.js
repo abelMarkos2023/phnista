@@ -52,7 +52,7 @@ const useSignupWithEmailAndPassword = () => {
                 }
 
                 const user = await setDoc(doc(firestore,'users',newUser.user.uid),userDoc)
-                localStorage.setItem('userInfo',JSON.stringify(newUser))
+                localStorage.setItem('userInfo',JSON.stringify(userDoc))
                 navigate('/')
                login(user)
             }

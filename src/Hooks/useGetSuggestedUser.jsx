@@ -12,7 +12,7 @@ const useGetSuggestedUser = () => {
     const [sugestedUsers,setSugestedUsers] = useState([])
     const {setSuggestedUsers} = suggestedUserStore()
 
-    const out = [...user.following,user.uid]
+    const out = [...user?.following,user.uid]
 
      useEffect(() => {
       const getUsers = async() => {

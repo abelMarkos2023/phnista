@@ -6,11 +6,19 @@ const suggestedUserStore = create(set => ({
     setSuggestedUsers: suggestedUsers => set(state => ({
         suggestedUsers:[...suggestedUsers]
     })),
-    followUser: (id,type,userId) => set(state => {
-        const user = state.suggestedUsers.filter(user => user.uid === id)
-        const otherUsers = state.suggestedUsers.filter(user => user.uid !== id)
+    followUser: (id,userId,type) => set(state => {
+        console.log(state.suggestedUsers)
+        const user = state?.suggestedUsers?.filter(user => user?.uid === id)
+        const otherUsers = state?.suggestedUsers?.filter(user => user?.uid !== id)
+
+        // const newUser = [];
+        // if(type !== 'Unfollow'){
+        //     newUser[...user[0]?.followers,userId]
+        // }else{
+        //     newUser[...user[0]?.followers.filter(u => u!== userId)]
+        // }
         
-       const newUser =  type !== 'Unfollow' ? user.followers.push(userId) : user.followers.filter(u => u !== userId)
+       const newUser =  type !== 'Unfollow' ? user[0]?.followers?.push(userId) : user[0]?.followers?.filter(u => u !== id)
         return {
             suggestedUsers:[...otherUsers,newUser[0]],
             

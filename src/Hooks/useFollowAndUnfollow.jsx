@@ -46,7 +46,7 @@ const followToggler = async() => {
     localStorage.setItem('userInfo',JSON.stringify(userNew))
     showToast('Success',`${fou == 'Follow' ? 'User Followed Successfully' :'User Unfollowed Successfully'}`)
     setUpdating(false)
-    followUser(UserId,user.uid,fou)
+   // followUser(userId,user.uid,fou)
     } catch (error) {
         showToast("Error",error.message,'error')
         console.log(error)

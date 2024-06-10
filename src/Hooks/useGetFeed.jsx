@@ -11,7 +11,12 @@ const useGetFeed = () => {
     const {user} = useAuthStore()
     const {showToast} = useToast()
     const {setFeed} = FeedStore()
-    const followingUser = user?.following;
+    const followingUser = [];
+    if(user?.following.length > 0){
+        user.following.forEach(user => {
+            followingUser.push(user)
+        })
+    }
     followingUser.push(user.uid)
 
     

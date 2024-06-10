@@ -40,7 +40,7 @@ const SuggestedUsers = () => {
     <Box w={'full'} display={'flex'} flexDirection={'column'} gap={0.2}>
         {
           sugestedUsers.map(user => (
-            <FollowUser image={user.profilePic} username={user.userName} link={`/profile/${user.userName}`} id={user.uid} followers={user.followers.length}/>
+            <FollowUser key={user.uid} image={user.profilePic} username={user.userName} link={`/profile/${user.userName}`} id={user.uid} followers={user.followers.length}/>
 
           ))
         }
