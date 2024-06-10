@@ -17,7 +17,6 @@ export const FeedStore = create(set => ({
         setComments : (comment,id) => set(state => {
             const post = state.feed.filter(p => p.id === id);
             const otherPosts = state.feed.filter(p => p.id !== id)
-            console.log(post)
             post[0].comments.push(comment)
             return {
                 posts:[...otherPosts,post[0]]
